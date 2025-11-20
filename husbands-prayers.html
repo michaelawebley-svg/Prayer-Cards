@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-Day Prayer Cards For My Husband</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #FF8B94;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .cta-hero {
+            background: linear-gradient(135deg, #FF8B94 0%, #FFB8A3 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(255, 139, 148, 0.3);
+        }
+
+        .cta-hero h2 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cta-hero p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background: white;
+            color: #FF8B94;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card-container {
+            perspective: 1000px;
+            width: 100%;
+            height: 550px;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, #FF8B94 0%, #FFB8A3 50%, #FFDAB9 100%);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(255, 139, 148, 0.3);
+        }
+
+        .card-front h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .card-front .day {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .card-front p {
+            font-size: 14px;
+            opacity: 0.95;
+        }
+
+        .card-front .tap-hint {
+            font-size: 11px;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        .card-back {
+            background: #fff;
+            color: #2c3e50;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow-y: auto;
+            border: 2px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .prayer-content {
+            flex: 1;
+            padding: 35px 28px;
+            font-size: 15px;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .prayer-content .prayer-text {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .prayer-content .declaration-text {
+            font-weight: 400;
+            color: #555;
+            margin-bottom: 0;
+            line-height: 1.8;
+        }
+
+        .prayer-content .scripture {
+            font-size: 12px;
+            color: #FF8B94;
+            font-style: italic;
+            margin-top: 25px;
+            font-weight: 600;
+        }
+
+        .speak-to-spouse {
+            background: linear-gradient(135deg, #FF8B94 0%, #FFB8A3 100%);
+            color: white;
+            padding: 15px 28px;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 1.6;
+            text-align: center;
+            border-top: 2px solid #f0f0f0;
+            margin-top: auto;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #FF8B94 0%, #FFB8A3 100%);
+            padding: 60px 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .cta-button {
+            font-size: 18px;
+            padding: 18px 50px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Prayers For My Husband</h1>
+            <p>10 powerful daily prayers to strengthen your marriage and intercede for the man you love. Flip each card to pray.</p>
+        </div>
+
+        <div class="cta-hero">
+            <h2>Get the Complete 60-Day Collection</h2>
+            <p>These 10 prayers are just the beginning. Access all 60 days of prayers for deeper spiritual intimacy in your marriage.</p>
+            <button class="cta-button" onclick="window.location.href='https://example.com/signup'">Get Full Access - $2.99/month</button>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Day 1 -->
+            <div class="card-container" onclick="this.querySelector('.card').classList.toggle('flipped')">
+                <div class="card">
+                    <div class="card-face card-front">
+                        <div class="day">Day 1</div>
+                        <h3>I Respect & Honor My Husband</h3>
+                        <p>Release criticism and choose honor</p>
+                        <div class="tap-hint">tap to pray</div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="prayer-content">
+                            <div class="prayer-text">Father, I honor the man you have given me. I release criticism, comparison, and contempt. I choose to see him through eyes of respect and admiration. Holy Spirit, help me see the best in him. Give me a grateful heart that focuses on what he does right. Make me a woman who lifts him up.</div>
+                            <div class="declaration-text">I am his biggest cheerleader. I speak life over him. I honor his leadership, his efforts, and his heart. My words build him up, never tear him down. My husband knows he is deeply respected, valued, and cherished by me in every way.</div>
+                            <div class="scripture">Ephesians 5:33 - "The wife must respect her husband"</div>
+                        </div>
+                        <div class="speak-to-spouse">
+                            Ex: Say to your husband: "I deeply respect you. I see your strength and leadership. You are a man of integrity."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="card-container" onclick="this.querySelector('.card').classList.toggle('flipped')">
+                <div class="card">
+                    <div class="card-face card-front">
+                        <div class="day">Day 2</div>
+                        <h3>I Support My Husband's Vision</h3>
+                        <p>Stand with him in his purpose</p>
+                        <div class="tap-hint">tap to pray</div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="prayer-content">
+                            <div class="prayer-text">Father, I stand with my husband in his purpose. I believe in his dreams and I stand as his partner in pursuing them. We are a team moving toward the same destiny. I listen to his vision without judgment. I encourage him when he doubts. I remind him of his strength and his calling.</div>
+                            <div class="declaration-text">Holy Spirit, align my heart with his. Give me wisdom to know how to support him best. Make me a woman who empowers him, believes in him, and helps him achieve his God-given purpose. I am his greatest supporter and my husband feels supported because I truly believe in him.</div>
+                            <div class="scripture">Proverbs 31:11 - "Her husband has full confidence in her"</div>
+                        </div>
+                        <div class="speak-to-spouse">
+                            Ex: Say to your husband: "I believe in your dreams. I'm with you all the way. Your vision matters to me."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="card-container" onclick="this.querySelector('.card').classList.toggle('flipped')">
+                <div class="card">
+                    <div class="card-face card-front">
+                        <div class="day">Day 3</div>
+                        <h3>I Pursue Intimacy With My Husband</h3>
+                        <p>Choose vulnerability and connection</p>
+                        <div class="tap-hint">tap to pray</div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="prayer-content">
+                            <div class="prayer-text">Father, I break every barrier to intimacy. I choose vulnerability, presence, and connection with my husband—emotionally, physically, and spiritually. I am fully present with my husband. I am attractive to him in my confidence and my love. I pursue him with passion and intentionality.</div>
+                            <div class="declaration-text">Holy Spirit, awaken my heart to his needs. Help me see him as the prize. Give me courage to be vulnerable and to invite him deeper into my heart and my life. I am his beloved. My husband feels desired and passionately loved because I pursue him with my whole heart.</div>
+                            <div class="scripture">Song of Solomon 2:16 - "My beloved is mine and I am his"</div>
+                        </div>
+                        <div class="speak-to-spouse">
+                            Ex: Say to your husband: "You are my greatest desire. I want to be close to you. Let me pursue you."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="card-container" onclick="this.querySelector('.card').classList.toggle('flipped')">
+                <div class="card">
+                    <div class="card-face card-front">
+                        <div class="day">Day 4</div>
+                        <h3>I Encourage My Husband's Strength</h3>
+                        <p>Remind him of his greatness</p>
+                        <div class="tap-hint">tap to pray</div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="prayer-content">
+                            <div class="prayer-text">Father, I see the strength in my husband. I celebrate his courage, his wisdom, and his ability to lead. I speak words that remind him of who he is in You. When he feels weak, my words remind him of his strength. When he doubts, I remind him of his wins.</div>
+                            <div class="declaration-text">Holy Spirit, show me when my husband needs encouragement most. Give me words that land on his heart. Make me a woman who fuels his confidence and his faith. I am his greatest fan. My husband is strong and courageous because I constantly remind him of his greatness.</div>
+                            <div class="scripture">1 Thessalonians 5:11 - "Therefore encourage one another and build each other up"</div>
+                        </div>
+                        <div class="speak-to-spouse">
+                            Ex: Say to your husband: "You are stronger than you think. You've overcome before. I'm so proud of you."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="card-container" onclick="this.querySelector('.card').classList.toggle('flipped')">
+                <div class="card">
+                    <div class="card-face card-front">
+                        <div class="day">Day 5</div>
+                        <h3>I Trust My Husband Completely</h3>
+                        <p>Release control and trust his leading</p>
+                        <div class="tap-hint">tap to pray</div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="prayer-content">
+                            <div class="prayer-text">Father, I release fear, worry, and control. I trust my husband to lead, to provide, to protect, and to love me. I trust him with my heart and my future. I believe in my husband's judgment. I support his decisions. I follow his leadership with peace and confidence.</div>
+                            <div class="declaration-text">Holy Spirit, heal any broken trust. Give me a heart that trusts easily and forgives quickly. Make me a woman who rests in the protection of my husband's love. I am secure in our marriage. My husband feels trusted because I have given him my complete confidence.</div>
+                            <div class="scripture">Proverbs 3:5-6 - "Trust in the LORD with all your heart and lean not on your own understanding"</div>
+                        </div>
+                        <div class="speak-to-spouse">
+                            Ex: Say to your husband: "I trust you completely. You have my heart. I follow your leadership."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 6-10 Sample -->
+            <div class="card-container" onclick="this.querySelector('.card').classList.toggle('flipped')">
+                <div class="card">
+                    <div class="card-face card-front">
+                        <div class="day">Day 6-10</div>
+                        <h3>And 5 More Prayers</h3>
+                        <p>Complete 10-day collection</p>
+                        <div class="tap-hint">tap to see more</div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="prayer-content">
+                            <div class="prayer-text"><strong>Days 6-10 Include:</strong></div>
+                            <div class="declaration-text" style="margin-top: 15px;">• I Lift My Husband Higher<br>
+• I Receive His Leadership<br>
+• I am His Refuge<br>
+• I Believe In My Husband<br>
+• I am His Partner For Life</div>
+                            <div style="margin-top: 20px; font-size: 14px; color: #FF8B94; font-weight: 600;">Each with full prayer + affirmation language</div>
+                        </div>
+                        <div class="speak-to-spouse">
+                            Get the complete 10-day collection now
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready For More?</h2>
+            <p>These 10 prayers have transformed thousands of marriages. Get access to the complete 60-day collection.</p>
+            <button class="cta-button" onclick="window.location.href='https://example.com/signup'">Get All 60 Days - $2.99/month</button>
+        </div>
+    </div>
+</body>
+</html>
